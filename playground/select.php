@@ -23,6 +23,8 @@ $mysqli_statement = $myConn->query($statement);
             <td>รหัส</td>
             <td>ชื้อผู้ใช้</td>
             <td>สถานะ</td>
+            <td>แก้ไข</td>
+            <td>ลบ</td>
         </tr>
         <?php
         while ($row = $mysqli_statement->fetch_array()) {
@@ -31,6 +33,8 @@ $mysqli_statement = $myConn->query($statement);
             <td><?php echo $row["id"]?></td>
             <td><?php echo $row["username"]?></td>
             <td><?php echo $row["status"]?></td>
+            <td>edit</td>
+            <td><a href="delete.php?id=<?php echo $row["id"]?>">delete</a></td>
         </tr>
         <?php
         }
