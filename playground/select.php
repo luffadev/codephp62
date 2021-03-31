@@ -1,21 +1,10 @@
 <?php
+include 'template/header.html';
 require_once 'connectdb.php';
 
 $statement = "SELECT * FROM users";
 $mysqli_statement = $myConn->query($statement);
-// while ($row = $mysqli_statement->fetch_array()) {
-//     echo $row["id"] . ' ' . $row["username"] . ' ' . $row["status"] . '<br>';
-// }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
 <body>
     <table style="width: 100%;" border="1">
@@ -33,8 +22,8 @@ $mysqli_statement = $myConn->query($statement);
             <td><?php echo $row["id"]?></td>
             <td><?php echo $row["username"]?></td>
             <td><?php echo $row["status"]?></td>
-            <td>edit</td>
-            <td><a href="delete.php?id=<?php echo $row["id"]?>">delete</a></td>
+            <td><a href="update.php?id=<?= $row["id"]?>&username=<?= $row["username"]?>&status=<?= $row["status"]?>"><i class="far fa-edit"></i></a></td>
+            <td><a href="delete.php?id=<?= $row["id"]?>"><i class="far fa-trash-alt"></i></a></td>
         </tr>
         <?php
         }
