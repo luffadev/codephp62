@@ -5,7 +5,6 @@ require_once 'connectdb.php';
 $statement = "SELECT * FROM users";
 $mysqli_statement = $myConn->query($statement);
 ?>
-
 <body>
     <table style="width: 100%;" border="1">
         <tr>
